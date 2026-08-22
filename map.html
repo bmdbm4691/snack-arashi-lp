@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#170a24" />
+    <meta name="description" content="スナック嵐へのアクセスマップ。Googleアカウント情報を表示しない埋め込み地図です。" />
+    <title>アクセスマップ｜スナック嵐</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23d9b560'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-size='36' fill='%23100619'%3E%E5%B5%90%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="map.css" />
+  </head>
+  <body class="map-page">
+    <header class="map-page-header">
+      <a class="brand" href="index.html" aria-label="スナック嵐のLPへ戻る">
+        <span class="brand-mark" aria-hidden="true">嵐</span>
+        <span class="brand-copy">
+          <small>SNACK ARASHI</small>
+          <strong>スナック嵐</strong>
+        </span>
+      </a>
+      <a class="map-back-link" href="index.html#access">LPへ戻る</a>
+    </header>
+
+    <main class="map-page-main">
+      <section class="map-page-copy" aria-labelledby="map-page-title">
+        <p class="eyebrow">ACCESS MAP</p>
+        <h1 id="map-page-title">スナック嵐への<br />アクセス</h1>
+        <address>
+          大垣市郭町2丁目15<br />
+          502ビル 2F
+        </address>
+        <p>大垣駅南口から徒歩5分</p>
+        <a class="button button-primary" href="tel:0584810555">
+          <span class="button-icon" aria-hidden="true">☎</span>
+          0584-81-0555
+        </a>
+      </section>
+
+      <section class="map-view" aria-label="スナック嵐の周辺地図">
+        <div class="map-frame">
+          <iframe
+            src="https://www.google.com/maps?q=%E5%A4%A7%E5%9E%A3%E5%B8%82%E9%83%AD%E7%94%BA2%E4%B8%81%E7%9B%AE15-502%E3%83%93%E3%83%AB%20%E3%82%B9%E3%83%8A%E3%83%83%E3%82%AF%E5%B5%90&amp;output=embed&amp;hl=ja"
+            title="大垣市郭町のスナック嵐 周辺地図"
+            loading="eager"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <p class="map-privacy-note">
+          <span aria-hidden="true">◯</span>
+          Googleアカウントの名前やプロフィール画像を表示しない地図です。
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

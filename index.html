@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="大垣市郭町のスナック嵐。ママみやこと、会話やカラオケを楽しみながら、ほっと一息つける大人の隠れ家です。初めての方も、お一人様も大歓迎。"
+    />
+    <meta name="theme-color" content="#170a24" />
+    <title>スナック嵐｜大垣・郭町</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23d9b560'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-size='36' fill='%23100619'%3E%E5%B5%90%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">本文へ移動</a>
+
+    <header class="site-header" aria-label="サイトヘッダー">
+      <a class="brand" href="#top" aria-label="スナック嵐 トップへ">
+        <span class="brand-mark" aria-hidden="true">嵐</span>
+        <span class="brand-copy">
+          <small>SNACK ARASHI</small>
+          <strong>スナック嵐</strong>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+        <span class="sr-only">メニューを開く</span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="メインナビゲーション">
+        <a href="#welcome">嵐について</a>
+        <a href="#menu">メニュー</a>
+        <a href="#access">アクセス</a>
+        <a class="nav-call" href="tel:0584810555">電話する</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section id="top" class="hero">
+        <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
+        <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
+        <div class="sparkles" aria-hidden="true"></div>
+        <div class="hero-inner">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">大垣・郭町 ｜ ママ みやこ</p>
+            <p class="hero-japanese">スナック <span>嵐</span></p>
+            <h1>疲れた夜に、<br />ほっと一息。</h1>
+            <p class="hero-lead">
+              大人の隠れ家で、癒しと安らぎのひとときを。<br />
+              初めての方も、お一人様も大歓迎です。
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="tel:0584810555">
+                <span class="button-icon" aria-hidden="true">☎</span>
+                電話で空席を確認
+              </a>
+              <a
+                class="button button-ghost"
+                href="map.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                地図を見る
+              </a>
+            </div>
+            <div class="image-song" data-song-player>
+              <button
+                class="image-song-button"
+                type="button"
+                aria-pressed="false"
+                aria-label="イメージソング『今夜もスナック嵐で』を再生"
+              >
+                <span class="image-song-control" aria-hidden="true">
+                  <span class="image-song-play">▶</span>
+                  <span class="image-song-pause">Ⅱ</span>
+                </span>
+                <span class="image-song-copy">
+                  <small>IMAGE SONG</small>
+                  <strong>今夜もスナック嵐で</strong>
+                  <span data-song-label>曲を再生する</span>
+                </span>
+              </button>
+              <a
+                class="image-song-link"
+                href="https://suno.com/s/OJsJnCjK3p1QFleY"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Sunoで『今夜もスナック嵐で』を開く"
+              >Suno ↗</a>
+              <span class="image-song-progress" data-song-progress aria-hidden="true"></span>
+              <span class="sr-only" data-song-status aria-live="polite"></span>
+              <audio id="image-song-audio" preload="metadata" playsinline>
+                <source
+                  src="https://cdn1.suno.ai/84a399cb-8348-46c0-8b75-8f3f266c1c8d.mp3"
+                  type="audio/mpeg"
+                />
+              </audio>
+            </div>
+            <button class="lyrics-open-button" type="button" data-open-lyrics aria-haspopup="dialog">
+              <span aria-hidden="true">♬</span>
+              タイトル・歌詞を見る
+            </button>
+            <dl class="hero-facts" aria-label="店舗概要">
+              <div>
+                <dt>OPEN</dt>
+                <dd>19:00–24:00</dd>
+              </div>
+              <div>
+                <dt>ACCESS</dt>
+                <dd>大垣駅南口から徒歩5分</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="hero-visual reveal reveal-delay" aria-label="スナック嵐のブランドイメージ">
+            <div class="hero-art-frame">
+              <img
+                src="assets/hero-illustration.jpg"
+                alt="着物姿の女性と花々に囲まれたスナック嵐のイラスト"
+              />
+            </div>
+          </div>
+        </div>
+        <a class="scroll-cue" href="#welcome" aria-label="次のセクションへ">
+          <span>SCROLL</span><i aria-hidden="true"></i>
+        </a>
+      </section>
+
+      <section id="welcome" class="section welcome-section">
+        <div class="section-inner">
+          <div class="section-heading centered reveal">
+            <p class="eyebrow">WELCOME TO ARASHI</p>
+            <h2>今夜も、嵐のように楽しく。<br />居心地は、ふんわり優しく。</h2>
+            <p>
+              会話を楽しみたい夜も、好きな歌を歌いたい夜も。<br />
+              心がほどける時間をご用意してお待ちしています。
+            </p>
+          </div>
+
+          <div class="promise-grid">
+            <article class="promise-card reveal">
+              <span class="promise-number">01</span>
+              <div class="promise-icon" aria-hidden="true">♡</div>
+              <h3>初めてでも安心</h3>
+              <p>スナックが初めての方も、お一人様も大歓迎。気負わずお越しください。</p>
+            </article>
+            <article class="promise-card reveal reveal-delay-short">
+              <span class="promise-number">02</span>
+              <div class="promise-icon" aria-hidden="true">♬</div>
+              <h3>笑顔と会話の時間</h3>
+              <p>ママみやこと楽しくおしゃべり。カラオケもゆっくりお楽しみいただけます。</p>
+            </article>
+            <article class="promise-card reveal reveal-delay">
+              <span class="promise-number">03</span>
+              <div class="promise-icon" aria-hidden="true">✦</div>
+              <h3>癒しと安らぎの空間</h3>
+              <p>一日の終わりに、心がほっとする大人の隠れ家を目指しています。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="menu" class="section menu-section">
+        <div class="section-inner">
+          <div class="section-heading menu-heading reveal">
+            <p class="eyebrow">DRINK &amp; FOOD</p>
+            <h2>今夜のおとも</h2>
+            <p>定番の一杯から、ゆっくり楽しめるボトルまで。</p>
+          </div>
+
+          <div class="menu-layout">
+            <div class="menu-columns reveal">
+              <article class="menu-card">
+                <div class="menu-card-title">
+                  <span aria-hidden="true">◇</span>
+                  <h3>アルコール</h3>
+                </div>
+                <dl class="menu-list">
+                  <div><dt>生ビール</dt><dd>700円</dd></div>
+                  <div><dt>瓶ビール</dt><dd>800円</dd></div>
+                  <div><dt>ハイボール</dt><dd>700円</dd></div>
+                  <div><dt>レモンサワー</dt><dd>700円</dd></div>
+                  <div><dt>ウーロンハイ</dt><dd>700円</dd></div>
+                  <div><dt>梅酒</dt><dd>700円</dd></div>
+                  <div><dt>グラスワイン（赤・白）</dt><dd>800円</dd></div>
+                </dl>
+              </article>
+
+              <article class="menu-card">
+                <div class="menu-card-title">
+                  <span aria-hidden="true">◇</span>
+                  <h3>ボトルキープ</h3>
+                </div>
+                <dl class="menu-list">
+                  <div><dt>焼酎ボトル</dt><dd>5,000円〜</dd></div>
+                  <div><dt>ウイスキーボトル</dt><dd>7,000円〜</dd></div>
+                  <div><dt>ブランデーボトル</dt><dd>8,000円〜</dd></div>
+                </dl>
+                <div class="menu-card-title sub-title">
+                  <span aria-hidden="true">◇</span>
+                  <h3>カラオケ</h3>
+                </div>
+                <dl class="menu-list">
+                  <div><dt>カラオケ 1曲</dt><dd>100円</dd></div>
+                </dl>
+              </article>
+
+              <article class="menu-card">
+                <div class="menu-card-title">
+                  <span aria-hidden="true">◇</span>
+                  <h3>ソフトドリンク</h3>
+                </div>
+                <dl class="menu-list">
+                  <div><dt>ウーロン茶</dt><dd>500円</dd></div>
+                  <div><dt>緑茶</dt><dd>500円</dd></div>
+                  <div><dt>コーラ</dt><dd>500円</dd></div>
+                  <div><dt>オレンジジュース</dt><dd>500円</dd></div>
+                  <div><dt>カルピス</dt><dd>500円</dd></div>
+                </dl>
+              </article>
+
+              <article class="menu-card">
+                <div class="menu-card-title">
+                  <span aria-hidden="true">◇</span>
+                  <h3>おつまみ</h3>
+                </div>
+                <dl class="menu-list">
+                  <div><dt>枝豆</dt><dd>500円</dd></div>
+                  <div><dt>チョコ盛り</dt><dd>500円</dd></div>
+                  <div><dt>ナッツ</dt><dd>500円</dd></div>
+                  <div><dt>チーズ盛り</dt><dd>700円</dd></div>
+                  <div><dt>乾き物盛り合わせ</dt><dd>700円</dd></div>
+                  <div><dt>ママの気まぐれ一品</dt><dd>800円</dd></div>
+                </dl>
+              </article>
+            </div>
+
+            <figure id="menu-poster" class="menu-poster reveal reveal-delay">
+              <div class="menu-poster-frame">
+                <img
+                  src="assets/menu-poster.png"
+                  alt="スナック嵐のドリンク・ボトル・おつまみメニューポスター"
+                  loading="lazy"
+                />
+                <div class="karaoke-correction" aria-label="カラオケは1曲100円">
+                  <span class="karaoke-correction-title">カラオケ</span>
+                  <span class="karaoke-correction-price"><strong>1曲</strong><b>100円</b></span>
+                </div>
+              </div>
+              <figcaption>カラオケは1曲100円です。</figcaption>
+            </figure>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="mood" class="section mood-section" aria-label="店主からのメッセージ">
+        <div class="mood-art" aria-hidden="true">
+          <img src="assets/mood-background.jpg" alt="" loading="lazy" />
+        </div>
+        <div class="mood-overlay"></div>
+        <div class="mood-copy reveal">
+          <p class="eyebrow">A LITTLE REST AT NIGHT</p>
+          <blockquote>
+            おつかれさまの先に、<br />やさしい夜を。
+          </blockquote>
+          <p>ママ みやこ</p>
+        </div>
+      </section>
+
+      <section id="access" class="section access-section">
+        <div class="section-inner access-layout">
+          <div class="access-copy reveal">
+            <p class="eyebrow">ACCESS &amp; INFO</p>
+            <h2>今夜も、<br />お待ちしています。</h2>
+            <p class="access-intro">あなたのご来店を、心よりお待ちしております。</p>
+
+            <dl class="shop-details">
+              <div>
+                <dt>店名</dt>
+                <dd>スナック嵐</dd>
+              </div>
+              <div>
+                <dt>ママ</dt>
+                <dd>みやこ</dd>
+              </div>
+              <div>
+                <dt>住所</dt>
+                <dd>大垣市郭町2丁目15<br class="mobile-only" /> 502ビル 2F</dd>
+              </div>
+              <div>
+                <dt>営業時間</dt>
+                <dd>19:00〜24:00</dd>
+              </div>
+              <div>
+                <dt>アクセス</dt>
+                <dd>大垣駅南口から徒歩5分</dd>
+              </div>
+              <div>
+                <dt>Instagram</dt>
+                <dd>
+                  <a href="https://www.instagram.com/snack_arashi.miyako/" target="_blank" rel="noopener noreferrer">
+                    @snack_arashi.miyako
+                  </a>
+                </dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="contact-card reveal reveal-delay">
+            <div class="contact-card-mark" aria-hidden="true">嵐</div>
+            <p>ご予約・空席確認はお電話で</p>
+            <a class="phone-number" href="tel:0584810555">0584-81-0555</a>
+            <span class="hours">受付目安　19:00〜24:00</span>
+            <div class="contact-actions">
+              <a class="button button-primary" href="tel:0584810555">電話をかける</a>
+              <a
+                class="button button-ghost"
+                href="map.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >地図を開く</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <span class="brand-mark" aria-hidden="true">嵐</span>
+        <div><small>SNACK ARASHI</small><strong>スナック嵐</strong></div>
+      </div>
+      <p>料金・営業情報は変更になる場合があります。最新情報は店舗へ直接ご確認ください。</p>
+      <p class="copyright">© <span id="year"></span> Snack Arashi</p>
+    </footer>
+
+    <div class="mobile-cta" aria-label="固定予約メニュー">
+      <a href="tel:0584810555"><span aria-hidden="true">☎</span> 電話で空席確認</a>
+      <a
+        href="map.html"
+        target="_blank"
+        rel="noopener noreferrer"
+      >地図</a>
+    </div>
+
+    <dialog id="lyrics-dialog" class="lyrics-dialog" aria-labelledby="lyrics-title">
+      <div class="lyrics-dialog-panel">
+        <header class="lyrics-dialog-header">
+          <div>
+            <p>IMAGE SONG LYRICS</p>
+            <span class="lyrics-title-label">タイトル</span>
+            <h2 id="lyrics-title">今夜もスナック嵐で</h2>
+          </div>
+          <button class="lyrics-close-button" type="button" data-close-lyrics aria-label="歌詞を閉じる">
+            <span aria-hidden="true">×</span>
+          </button>
+        </header>
+
+        <div class="lyrics-dialog-body">
+          <section class="lyrics-block">
+            <h3>イントロ</h3>
+            <p>今夜も灯りが　やさしく揺れる<br />心をほどく　この場所で</p>
+          </section>
+
+          <section class="lyrics-block">
+            <h3>Aメロ1</h3>
+            <p>
+              一日ぶんの　疲れを抱えて<br />
+              いつもの扉を　そっと開ければ<br />
+              「おかえりなさい」と　迎える声に<br />
+              忘れかけてた　笑顔が戻る
+            </p>
+          </section>
+
+          <section class="lyrics-block">
+            <h3>Bメロ1</h3>
+            <p>
+              うれしい夜も　寂しい夜も<br />
+              どんな気持ちも　包んでくれる<br />
+              ここは大人の隠れ家<br />
+              癒しと安らぎの空間
+            </p>
+          </section>
+
+          <section class="lyrics-block lyrics-chorus">
+            <h3>サビ</h3>
+            <p>
+              スナック嵐　スナック嵐<br />
+              今夜もここで　乾杯しよう<br />
+              ママミヤコの　やさしい笑顔が<br />
+              心の曇りを　晴らしてくれる
+            </p>
+            <p>
+              スナック嵐　スナック嵐<br />
+              笑って歌って　明日へ帰ろう<br />
+              笑顔になれる時間を<br />
+              あなたにお届けします
+            </p>
+          </section>
+
+          <section class="lyrics-block">
+            <h3>Aメロ2</h3>
+            <p>
+              初めて会った　あの日の人も<br />
+              グラスを重ねりゃ　いつしか仲間<br />
+              懐かしい歌　口ずさむたび<br />
+              思い出までも　輝きだすよ
+            </p>
+          </section>
+
+          <section class="lyrics-block">
+            <h3>Bメロ2</h3>
+            <p>
+              語りたい夜　静かな夜も<br />
+              あなたのままで　過ごせばいい<br />
+              ここは心のよりどころ<br />
+              癒しと安らぎの空間
+            </p>
+          </section>
+
+          <section class="lyrics-block lyrics-chorus">
+            <h3>サビ</h3>
+            <p>
+              スナック嵐　スナック嵐<br />
+              今夜もここで　乾杯しよう<br />
+              ママミヤコの　温かい言葉<br />
+              疲れた心に　明かりをともす
+            </p>
+            <p>
+              スナック嵐　スナック嵐<br />
+              笑って歌って　元気になろう<br />
+              笑顔になれる時間を<br />
+              あなたにお届けします
+            </p>
+          </section>
+
+          <section class="lyrics-block lyrics-instrumental">
+            <h3>間奏</h3>
+            <p aria-hidden="true">♪</p>
+          </section>
+
+          <section class="lyrics-block">
+            <h3>Cメロ</h3>
+            <p>
+              外では冷たい　雨が降っても<br />
+              この場所だけは　いつでも晴れ<br />
+              ひとりじゃないと　思える夜を<br />
+              今日も一緒に　過ごしましょう
+            </p>
+          </section>
+
+          <section class="lyrics-block lyrics-chorus">
+            <h3>ラスサビ</h3>
+            <p>
+              スナック嵐　スナック嵐<br />
+              出会えたご縁に　乾杯しよう<br />
+              ママミヤコの　変わらぬ笑顔が<br />
+              みんなの心を　つないでくれる
+            </p>
+            <p>
+              スナック嵐　スナック嵐<br />
+              あなたの帰る　場所でありたい<br />
+              大人の隠れ家　愛の灯り<br />
+              癒しと安らぎの空間
+            </p>
+            <p>笑顔になれる時間を<br />心を込めてお届けします</p>
+          </section>
+
+          <section class="lyrics-block">
+            <h3>アウトロ</h3>
+            <p>また会いましょう　この場所で<br />今夜もスナック嵐で</p>
+          </section>
+        </div>
+
+        <footer class="lyrics-dialog-footer">
+          <button class="lyrics-footer-close" type="button" data-close-lyrics>歌詞を閉じる</button>
+        </footer>
+      </div>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>
