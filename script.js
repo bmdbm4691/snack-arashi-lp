@@ -84,8 +84,8 @@ if (songPlayer) {
       await audio.play();
     } catch (error) {
       songPlayer.classList.add('has-error');
-      songLabel.textContent = '再生できません・Sunoで聴く';
-      songStatus.textContent = '曲を再生できませんでした。Sunoで開くリンクをご利用ください';
+      songLabel.textContent = '再生できません';
+      songStatus.textContent = '曲を再生できませんでした';
     }
   });
 
