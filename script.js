@@ -48,57 +48,70 @@ if (reducedMotion || !('IntersectionObserver' in window)) {
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
-const songPlayer = document.querySelector('[data-song-player]');
+const audio = document.getElementById('image-song-audio');
+const lyricsPlayButton = document.querySelector('[data-lyrics-play]');
 
-if (songPlayer) {
-  const audio = songPlayer.querySelector('audio');
-  const playButton = songPlayer.querySelector('.image-song-button');
-  const songLabel = songPlayer.querySelector('[data-song-label]');
-  const songStatus = songPlayer.querySelector('[data-song-status]');
-  const songProgress = songPlayer.querySelector('[data-song-progress]');
+if (audio && lyricsPlayButton) {
+  const lyricsPlayLabel = document.querySelector('[data-lyrics-play-label]');
+  const lyricsStatus = document.querySelector('[data-lyrics-status]');
+  const lyricsProgress = document.querySelector('[data-lyrics-progress]');
+  const songChoices = document.querySelectorAll('[data-select-song]');
+  const songPanels = document.querySelectorAll('[data-lyrics-song]');
+  const songHeadings = document.querySelectorAll('[data-song-heading]');
+  const audioSource = audio.querySelector('source');
+  const lyricsBody = document.querySelector('.lyrics-dialog-body');
 
   const setPlayerState = (isPlaying) => {
-    songPlayer.classList.toggle('is-playing', isPlaying);
-    playButton.setAttribute('aria-pressed', String(isPlaying));
-    playButton.setAttribute(
-      'aria-label',
-      isPlaying
-        ? "イメージソング『今夜もスナック嵐で』を一時停止"
-        : "イメージソング『今夜もスナック嵐で』を再生",
-    );
-    songLabel.textContent = isPlaying ? '再生中・押すと一時停止' : audio.currentTime > 0 ? '続きを再生する' : '曲を再生する';
-    songStatus.textContent = isPlaying ? 'イメージソングを再生しています' : 'イメージソングを一時停止しました';
+    const label = isPlaying ? '曲を一時停止' : audio.currentTime > 0 ? '曲の続きを再生' : '歌詞を見ながら曲を再生';
+    lyricsPlayButton.setAttribute('aria-pressed', String(isPlaying));
+    lyricsPlayButton.setAttribute('aria-label', label);
+    if (lyricsPlayLabel) lyricsPlayLabel.textContent = label;
+    if (lyricsStatus) lyricsStatus.textContent = isPlaying ? 'イメージソングを再生しています' : 'イメージソングを一時停止しました';
   };
 
-  playButton.addEventListener('click', async () => {
-    songPlayer.classList.remove('has-error');
-
+  const toggleSong = async () => {
     if (!audio.paused) {
       audio.pause();
       return;
     }
 
-    songLabel.textContent = '読み込み中…';
+    if (lyricsPlayLabel) lyricsPlayLabel.textContent = '読み込み中…';
 
     try {
       await audio.play();
     } catch (error) {
-      songPlayer.classList.add('has-error');
-      songLabel.textContent = '再生できません';
-      songStatus.textContent = '曲を再生できませんでした';
+      if (lyricsPlayLabel) lyricsPlayLabel.textContent = '再生できません';
+      if (lyricsStatus) lyricsStatus.textContent = '曲を再生できませんでした';
     }
-  });
+  };
+
+  lyricsPlayButton.addEventListener('click', toggleSong);
+
+  songChoices.forEach((choice) => choice.addEventListener('click', () => {
+    if (choice.getAttribute('aria-pressed') === 'true') return;
+
+    audio.pause();
+    audio.currentTime = 0;
+    audioSource.src = choice.dataset.songSrc;
+    audio.load();
+    songHeadings.forEach((heading) => { heading.hidden = heading.dataset.songHeading !== choice.dataset.selectSong; });
+    songChoices.forEach((button) => button.setAttribute('aria-pressed', String(button === choice)));
+    songPanels.forEach((panel) => { panel.hidden = panel.dataset.lyricsSong !== choice.dataset.selectSong; });
+    lyricsBody.scrollTop = 0;
+    lyricsProgress.style.width = '0%';
+    setPlayerState(false);
+  }));
 
   audio.addEventListener('play', () => setPlayerState(true));
   audio.addEventListener('pause', () => setPlayerState(false));
   audio.addEventListener('ended', () => {
     audio.currentTime = 0;
     setPlayerState(false);
-    songProgress.style.width = '0%';
+    if (lyricsProgress) lyricsProgress.style.width = '0%';
   });
   audio.addEventListener('timeupdate', () => {
     if (!Number.isFinite(audio.duration) || audio.duration === 0) return;
-    songProgress.style.width = `${(audio.currentTime / audio.duration) * 100}%`;
+    if (lyricsProgress) lyricsProgress.style.width = `${(audio.currentTime / audio.duration) * 100}%`;
   });
 }
 
@@ -114,6 +127,7 @@ function closeLyrics() {
   } else {
     lyricsDialog.removeAttribute('open');
     document.body.classList.remove('dialog-open');
+    audio?.pause();
   }
 }
 
@@ -138,4 +152,5 @@ lyricsDialog?.addEventListener('click', (event) => {
 
 lyricsDialog?.addEventListener('close', () => {
   document.body.classList.remove('dialog-open');
+  audio?.pause();
 });

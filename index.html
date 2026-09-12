@@ -63,35 +63,9 @@
                 地図を見る
               </a>
             </div>
-            <div class="image-song" data-song-player>
-              <button
-                class="image-song-button"
-                type="button"
-                aria-pressed="false"
-                aria-label="イメージソング『今夜もスナック嵐で』を再生"
-              >
-                <span class="image-song-control" aria-hidden="true">
-                  <span class="image-song-play">▶</span>
-                  <span class="image-song-pause">Ⅱ</span>
-                </span>
-                <span class="image-song-copy">
-                  <small>IMAGE SONG</small>
-                  <strong>今夜もスナック嵐で</strong>
-                  <span data-song-label>曲を再生する</span>
-                </span>
-              </button>
-              <span class="image-song-progress" data-song-progress aria-hidden="true"></span>
-              <span class="sr-only" data-song-status aria-live="polite"></span>
-              <audio id="image-song-audio" preload="metadata" playsinline>
-                <source
-                  src="assets/snack-arashi-image-song.mp3"
-                  type="audio/mpeg"
-                />
-              </audio>
-            </div>
             <button class="lyrics-open-button" type="button" data-open-lyrics aria-haspopup="dialog">
               <span aria-hidden="true">♬</span>
-              タイトル・歌詞を見る
+              曲・歌詞を見る
             </button>
             <dl class="hero-facts" aria-label="店舗概要">
               <div>
@@ -158,26 +132,37 @@
           <div class="section-heading menu-heading reveal">
             <p class="eyebrow">DRINK &amp; KARAOKE</p>
             <h2>今夜のおとも</h2>
-            <p>定番の一杯から、ゆっくり楽しめるボトルまで。</p>
+            <p><span class="menu-intro-phrase">定番の一杯から、</span><wbr /><span class="menu-intro-phrase">ゆっくり楽しめるボトルまで。</span></p>
           </div>
 
           <div class="menu-layout">
             <div class="menu-columns reveal">
-              <article class="menu-card">
-                <div class="menu-card-title">
-                  <span aria-hidden="true">◇</span>
-                  <h3>アルコール</h3>
-                </div>
-                <dl class="menu-list">
-                  <div><dt>生ビール</dt><dd>700円</dd></div>
-                  <div><dt>瓶ビール</dt><dd>700円</dd></div>
-                  <div><dt>日本酒（小）</dt><dd>700円</dd></div>
-                  <div><dt>グラスワイン</dt><dd>700円</dd></div>
-                  <div><dt>カクテル各種</dt><dd>700円</dd></div>
-                  <div><dt>チュウハイ各種</dt><dd>700円</dd></div>
-                  <div><dt>梅酒</dt><dd>700円</dd></div>
-                </dl>
-              </article>
+              <div class="menu-card menu-card-combined">
+                <article class="menu-card-group menu-card-alcohol">
+                  <div class="menu-card-title">
+                    <span aria-hidden="true">◇</span>
+                    <h3>アルコール</h3>
+                  </div>
+                  <dl class="menu-list">
+                    <div><dt>生ビール</dt><dd>700円</dd></div>
+                    <div><dt>瓶ビール</dt><dd>700円</dd></div>
+                    <div><dt>日本酒（小）</dt><dd>700円</dd></div>
+                    <div><dt>グラスワイン</dt><dd>700円</dd></div>
+                    <div><dt>カクテル各種</dt><dd>700円</dd></div>
+                    <div><dt>チュウハイ各種</dt><dd>700円</dd></div>
+                    <div><dt>梅酒</dt><dd>700円</dd></div>
+                  </dl>
+                </article>
+                <article class="menu-card-group menu-card-karaoke">
+                  <div class="menu-card-title sub-title">
+                    <span aria-hidden="true">◇</span>
+                    <h3>カラオケ</h3>
+                  </div>
+                  <dl class="menu-list">
+                    <div><dt>カラオケ 1曲</dt><dd>100円</dd></div>
+                  </dl>
+                </article>
+              </div>
 
               <article class="menu-card">
                 <div class="menu-card-title">
@@ -197,13 +182,6 @@
                   <div><dt>嵐ウイスキー</dt><dd>5,000円</dd></div>
                   <div><dt>Nウイスキー</dt><dd>5,000円</dd></div>
                   <div><dt>焼酎 各</dt><dd>4,500円</dd></div>
-                </dl>
-                <div class="menu-card-title sub-title">
-                  <span aria-hidden="true">◇</span>
-                  <h3>カラオケ</h3>
-                </div>
-                <dl class="menu-list">
-                  <div><dt>カラオケ 1曲</dt><dd>100円</dd></div>
                 </dl>
               </article>
 
@@ -327,14 +305,47 @@
           <div>
             <p>IMAGE SONG LYRICS</p>
             <span class="lyrics-title-label">タイトル</span>
-            <h2 id="lyrics-title">今夜もスナック嵐で</h2>
+            <h2 id="lyrics-title">
+              <span data-song-heading="original">今夜もスナック嵐で</span>
+              <span data-song-heading="mata-aeru" hidden>スナック嵐 <span class="song-title-nowrap">～また逢える場所～</span></span>
+              <span data-song-heading="hajimemashite" hidden>スナック嵐 <span class="song-title-nowrap song-title-long">～はじめましての夜～</span></span>
+              <span data-song-heading="ogaki" hidden>スナック嵐 <span class="song-title-nowrap song-title-long">～おおがきの夜に～</span></span>
+            </h2>
           </div>
           <button class="lyrics-close-button" type="button" data-close-lyrics aria-label="歌詞を閉じる">
             <span aria-hidden="true">×</span>
           </button>
         </header>
 
+        <div class="lyrics-song-switcher" aria-label="曲を選ぶ">
+          <button type="button" data-select-song="original" data-song-src="assets/snack-arashi-image-song.mp3" aria-controls="lyrics-song-original" aria-pressed="true">
+            <small>1曲目</small><strong>今夜もスナック嵐で</strong>
+          </button>
+          <button type="button" data-select-song="mata-aeru" data-song-src="assets/snack-arashi-mata-aeru-basho.mp3" aria-controls="lyrics-song-mata-aeru" aria-pressed="false">
+            <small>2曲目</small><strong>また逢える場所</strong>
+          </button>
+          <button type="button" data-select-song="hajimemashite" data-song-src="assets/snack-arashi-hajimemashite-no-yoru.mp3" aria-controls="lyrics-song-hajimemashite" aria-pressed="false">
+            <small>3曲目</small><strong>はじめましての夜</strong>
+          </button>
+          <button type="button" data-select-song="ogaki" data-song-src="assets/snack-arashi-ogaki-no-yoru-ni.mp3" aria-controls="lyrics-song-ogaki" aria-pressed="false">
+            <small>4曲目</small><strong>おおがきの夜に</strong>
+          </button>
+        </div>
+
+        <div class="lyrics-player">
+          <button class="lyrics-play-button" type="button" data-lyrics-play aria-pressed="false" aria-label="歌詞を見ながら曲を再生">
+            <span class="lyrics-play-icon" aria-hidden="true">▶</span>
+            <span data-lyrics-play-label>歌詞を見ながら曲を再生</span>
+          </button>
+          <span class="lyrics-play-progress" data-lyrics-progress aria-hidden="true"></span>
+          <span class="sr-only" data-lyrics-status aria-live="polite"></span>
+          <audio id="image-song-audio" preload="metadata" playsinline>
+            <source src="assets/snack-arashi-image-song.mp3" type="audio/mpeg" />
+          </audio>
+        </div>
+
         <div class="lyrics-dialog-body">
+          <div id="lyrics-song-original" data-lyrics-song="original">
           <section class="lyrics-block">
             <h3>イントロ</h3>
             <p>今夜も灯りが　やさしく揺れる<br />心をほどく　この場所で</p>
@@ -448,6 +459,310 @@
             <h3>アウトロ</h3>
             <p>また会いましょう　この場所で<br />今夜もスナック嵐で</p>
           </section>
+          </div>
+
+          <div id="lyrics-song-mata-aeru" data-lyrics-song="mata-aeru" hidden>
+            <section class="lyrics-block">
+              <h3>Aメロ 1</h3>
+              <p>
+                今日も一日　おつかれさま<br />
+                扉を開けば　いつもの笑顔<br />
+                グラスの向こう　こぼれる話<br />
+                ここでは少し　肩の力を抜いて
+              </p>
+              <p>
+                うれしかったこと　悔しかったこと<br />
+                言葉にすれば　軽くなるから<br />
+                そんな夜には　そっと寄り道<br />
+                灯りが待ってる　あの場所へ
+              </p>
+            </section>
+
+            <section class="lyrics-block">
+              <h3>Bメロ</h3>
+              <p>
+                ママミヤコの　やさしい声が<br />
+                心の隙間を　包んでくれる<br />
+                初めて会った人ともいつしか<br />
+                笑って乾杯　夜が始まる
+              </p>
+            </section>
+
+            <section class="lyrics-block lyrics-chorus">
+              <h3>サビ</h3>
+              <p>
+                スナック嵐　今夜もここで<br />
+                笑顔の花が　咲いている<br />
+                大人の隠れ家　癒しの時間<br />
+                明日への元気を　くれる場所
+              </p>
+              <p>
+                スナック嵐　あなたと一緒に<br />
+                歌って笑って　夜は更けてく<br />
+                「また来るね」って　手を振るころには<br />
+                心が少し　あたたかい
+              </p>
+            </section>
+
+            <section class="lyrics-block">
+              <h3>Aメロ 2</h3>
+              <p>
+                懐かしい歌　口ずさめば<br />
+                あの日の景色が　よみがえる<br />
+                知らない歌も　手拍子すれば<br />
+                みんな仲間に　なれるから
+              </p>
+              <p>
+                楽しい時も　寂しい時も<br />
+                変わらぬ灯りが　そこにある<br />
+                ひとりで来ても　帰るころには<br />
+                笑顔になれる　不思議な夜
+              </p>
+            </section>
+
+            <section class="lyrics-block">
+              <h3>Bメロ 2</h3>
+              <p>
+                ママミヤコの　「またおいで」が<br />
+                明日へ進む　力になる<br />
+                忙しい日々を　少し忘れて<br />
+                今夜はゆっくり　楽しもう
+              </p>
+            </section>
+
+            <section class="lyrics-block lyrics-chorus">
+              <h3>サビ</h3>
+              <p>
+                スナック嵐　今夜もここで<br />
+                笑顔の花が　咲いている<br />
+                安らぎの場所　やさしい時間<br />
+                疲れた心を　ほどいてく
+              </p>
+              <p>
+                スナック嵐　あなたと一緒に<br />
+                歌って語って　夜は更けてく<br />
+                出会えたことに　乾杯しよう<br />
+                このひとときを　忘れない
+              </p>
+            </section>
+
+            <section class="lyrics-block">
+              <h3>ブリッジ</h3>
+              <p>
+                人生はいろんな　風が吹くけど<br />
+                雨の日だって　あるけれど<br />
+                帰れる場所が　ひとつあれば<br />
+                また明日から　歩いていける
+              </p>
+            </section>
+
+            <section class="lyrics-block lyrics-chorus">
+              <h3>ラスサビ</h3>
+              <p>
+                スナック嵐　いつもの場所で<br />
+                今日も誰かを　待っている<br />
+                ママミヤコの　あたたかな笑顔<br />
+                癒しと安らぎ　届けながら
+              </p>
+              <p>
+                スナック嵐　これから先も<br />
+                笑顔の時間を　重ねよう<br />
+                「おかえり」「またね」が似合う場所<br />
+                あなたと出会える　この場所で
+              </p>
+              <p>
+                今夜も乾杯<br />
+                また逢えるまで<br />
+                スナック嵐で<br />
+                また逢いましょう
+              </p>
+            </section>
+          </div>
+
+          <div id="lyrics-song-hajimemashite" data-lyrics-song="hajimemashite" hidden>
+            <section class="lyrics-block">
+              <h3>Aメロ 1</h3>
+              <p>
+                少し気になって　立ち止まる夜<br />
+                この扉の向こう　どんな場所だろう<br />
+                初めてのお店　ちょっと緊張<br />
+                そんな気持ちも　よくわかるから
+              </p>
+              <p>
+                勇気を出して　扉を開けば<br />
+                聞こえてくるよ　楽しそうな声<br />
+                「いらっしゃい」って　笑顔で迎える<br />
+                今夜はここから　始めましょう
+              </p>
+            </section>
+
+            <section class="lyrics-block">
+              <h3>Bメロ</h3>
+              <p>
+                ひとりで来ても　大丈夫<br />
+                うまく話せなくても　大丈夫<br />
+                ママミヤコの　やさしい笑顔<br />
+                自然と心が　ほどけてく
+              </p>
+            </section>
+
+            <section class="lyrics-block lyrics-chorus">
+              <h3>サビ</h3>
+              <p>
+                はじめまして　スナック嵐<br />
+                今夜あなたを　待っていました<br />
+                気取らなくていい　そのままでいい<br />
+                グラス片手に　乾杯しよう
+              </p>
+              <p>
+                はじめまして　スナック嵐<br />
+                知らない人も　すぐ笑い合える<br />
+                ちょっと寄り道　そんな気持ちで<br />
+                あなたの夜を　楽しんで
+              </p>
+            </section>
+
+            <section class="lyrics-block">
+              <h3>Aメロ 2</h3>
+              <p>
+                仕事の話も　恋の話も<br />
+                今日あったことを　聞かせてほしい<br />
+                話したくない　そんな夜なら<br />
+                静かに飲むのも　それでいい
+              </p>
+              <p>
+                歌が好きなら　一緒に歌おう<br />
+                聴いていたいなら　それもいい<br />
+                決まりなんてない　自由な時間<br />
+                あなたのペースで　過ごせばいい
+              </p>
+            </section>
+
+            <section class="lyrics-block">
+              <h3>Bメロ 2</h3>
+              <p>
+                知らない場所は　誰だって<br />
+                最初の一歩が　少し怖い<br />
+                だけど気づけば　笑ってる<br />
+                そんな夜になる　スナック嵐
+              </p>
+            </section>
+
+            <section class="lyrics-block lyrics-chorus">
+              <h3>サビ</h3>
+              <p>
+                ようこそここへ　スナック嵐<br />
+                今夜出会えた　このご縁に<br />
+                大人の隠れ家　癒しの時間<br />
+                ゆっくりのんびり　過ごしましょう
+              </p>
+              <p>
+                ようこそここへ　スナック嵐<br />
+                ママミヤコと　笑顔の仲間<br />
+                帰るころには　きっとあなたも<br />
+                「また来たいな」と　思えるから
+              </p>
+            </section>
+
+            <section class="lyrics-block">
+              <h3>ブリッジ</h3>
+              <p>
+                特別なことは　いらないよ<br />
+                疲れた時には　休めばいい<br />
+                笑いたい時は　笑えばいい<br />
+                あなたの居場所に　なれたらいい
+              </p>
+            </section>
+
+            <section class="lyrics-block lyrics-chorus">
+              <h3>ラスサビ</h3>
+              <p>
+                はじめましてが　いつの間にか<br />
+                「また来たよ」に　変わる場所<br />
+                スナック嵐　この夜から<br />
+                新しい時間を　始めよう
+              </p>
+              <p>
+                ママミヤコの　あたたかな笑顔<br />
+                癒しと安らぎ　ここにある<br />
+                初めての夜を　忘れないように<br />
+                今夜一緒に　乾杯しよう
+              </p>
+              <p>
+                ようこそ<br />
+                スナック嵐へ<br />
+                また会える日を<br />
+                楽しみに
+              </p>
+            </section>
+          </div>
+
+          <div id="lyrics-song-ogaki" data-lyrics-song="ogaki" hidden>
+            <section class="lyrics-block">
+              <h3>Aメロ</h3>
+              <p>
+                水の都を　歩いたあとは<br />
+                旅の続きを　もう少しだけ<br />
+                知らない街の　知らない夜も<br />
+                扉を開けば　笑顔が待ってる
+              </p>
+              <p>
+                大垣城を　振り返りながら<br />
+                今日の思い出　グラスに映す<br />
+                旅の途中で　出会えたご縁<br />
+                今夜はここで　乾杯しよう
+              </p>
+            </section>
+
+            <section class="lyrics-block lyrics-chorus">
+              <h3>サビ</h3>
+              <p>
+                ようこそ　おおがき<br />
+                ようこそ　スナック嵐<br />
+                旅の疲れも　忘れるような<br />
+                あたたかな夜を　あなたに
+              </p>
+              <p>
+                ママミヤコの　笑顔に会えば<br />
+                初めてなのに　なぜか落ち着く<br />
+                今夜の出会いも　旅の思い出<br />
+                スナック嵐で　乾杯しよう
+              </p>
+            </section>
+
+            <section class="lyrics-block">
+              <h3>Aメロ 2</h3>
+              <p>
+                名物食べて　街を歩いて<br />
+                楽しい一日　終わるその前に<br />
+                歌って笑って　話して飲んで<br />
+                おおがきの夜を　楽しもう
+              </p>
+              <p>
+                どこから来たの？　そんな会話で<br />
+                知らない同士も　すぐ仲間<br />
+                旅の一ページ　増えるような<br />
+                素敵な時間を　ここで一緒に
+              </p>
+            </section>
+
+            <section class="lyrics-block lyrics-chorus">
+              <h3>ラスサビ</h3>
+              <p>
+                ありがとう　おおがき<br />
+                ありがとう　スナック嵐<br />
+                今日という日の　最後の思い出<br />
+                笑顔でそっと　持ち帰ろう
+              </p>
+              <p>
+                またこの街に　来るその時は<br />
+                「ただいま」って　扉を開けて<br />
+                旅から始まる　新しいご縁<br />
+                また会いましょう<br />
+                スナック嵐で
+              </p>
+            </section>
+          </div>
         </div>
 
         <footer class="lyrics-dialog-footer">
