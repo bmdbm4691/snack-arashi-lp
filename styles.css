@@ -528,6 +528,7 @@ a {
 .lyrics-close-button:focus-visible,
 .lyrics-footer-close:focus-visible,
 .lyrics-play-button:focus-visible,
+.lyrics-playlist-button:focus-visible,
 .lyrics-song-switcher button:focus-visible {
   outline: 2px solid var(--gold-light);
   outline-offset: 3px;
@@ -588,12 +589,19 @@ a {
   border-bottom: 1px solid rgba(217, 181, 96, 0.24);
 }
 
+.lyrics-player-controls {
+  display: grid;
+  width: min(100%, 620px);
+  grid-template-columns: minmax(0, 1fr) minmax(140px, 170px);
+  gap: 10px;
+}
+
 .lyrics-play-button {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  width: min(100%, 500px);
+  width: 100%;
   min-height: 50px;
   padding: 9px 16px;
   color: var(--night);
@@ -604,6 +612,48 @@ a {
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
+}
+
+.lyrics-playlist-button {
+  display: flex;
+  min-width: 0;
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 9px 12px;
+  color: var(--gold-light);
+  background: rgba(217, 181, 96, 0.08);
+  border: 1px solid rgba(247, 227, 166, 0.55);
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.lyrics-playlist-button:hover,
+.lyrics-playlist-button:focus-visible,
+.lyrics-playlist-button[aria-pressed="true"] {
+  color: var(--night);
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  border-color: var(--gold-light);
+}
+
+.lyrics-playlist-icon {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.lyrics-playlist-button[aria-pressed="true"] .lyrics-playlist-icon {
+  font-size: 0;
+}
+
+.lyrics-playlist-button[aria-pressed="true"] .lyrics-playlist-icon::after {
+  content: "■";
+  font-size: 13px;
 }
 
 .lyrics-play-icon {
@@ -1484,6 +1534,25 @@ a {
 
   .lyrics-player {
     padding: 8px 16px 10px;
+  }
+
+  .lyrics-player-controls {
+    grid-template-columns: minmax(0, 1fr) 116px;
+    gap: 8px;
+  }
+
+  .lyrics-play-button {
+    gap: 7px;
+    padding-right: 9px;
+    padding-left: 9px;
+    font-size: 14px;
+  }
+
+  .lyrics-playlist-button {
+    gap: 5px;
+    padding-right: 8px;
+    padding-left: 8px;
+    font-size: 12px;
   }
 
   .lyrics-song-switcher {
