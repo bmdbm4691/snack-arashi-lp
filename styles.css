@@ -537,7 +537,7 @@ a {
 .lyrics-song-switcher {
   display: grid;
   flex: 0 0 auto;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 8px;
   padding: 12px 24px;
   background: #1e0d27;
@@ -547,7 +547,7 @@ a {
 .lyrics-song-switcher button {
   min-width: 0;
   min-height: 56px;
-  padding: 7px 12px;
+  padding: 7px 8px;
   color: rgba(255, 255, 255, 0.78);
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.14);
@@ -574,7 +574,7 @@ a {
 
 .lyrics-song-switcher strong {
   margin-top: 2px;
-  font-size: 14px;
+  font-size: 13px;
   overflow-wrap: anywhere;
 }
 
@@ -999,6 +999,11 @@ a {
 
 .menu-heading {
   max-width: 700px;
+}
+
+.menu-heading-phrase {
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .menu-intro-phrase {
@@ -1556,12 +1561,13 @@ a {
   }
 
   .lyrics-song-switcher {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     padding: 8px 16px;
   }
 
   .lyrics-song-switcher button {
-    min-height: 52px;
+    min-height: 58px;
+    grid-column: span 2;
     padding: 6px 4px;
   }
 
@@ -1800,6 +1806,16 @@ a {
 
   .phone-number {
     font-size: 30px;
+  }
+}
+
+@media (max-width: 350px) {
+  .lyrics-song-switcher {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lyrics-song-switcher > button {
+    grid-column: auto;
   }
 }
 

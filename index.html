@@ -10,7 +10,7 @@
     <meta name="theme-color" content="#170a24" />
     <title>スナック嵐｜大垣・郭町</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23d9b560'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-size='36' fill='%23100619'%3E%E5%B5%90%3C/text%3E%3C/svg%3E" />
-    <link rel="stylesheet" href="styles.css?v=20260918-playlist-loop" />
+    <link rel="stylesheet" href="styles.css?v=20260920-sixth-song" />
   </head>
   <body>
     <a class="skip-link" href="#main">本文へ移動</a>
@@ -131,7 +131,7 @@
         <div class="section-inner">
           <div class="section-heading menu-heading reveal">
             <p class="eyebrow">DRINK &amp; KARAOKE</p>
-            <h2>今夜のおとも</h2>
+            <h2><span class="menu-heading-phrase">お酒と歌で、</span><span class="menu-heading-phrase">楽しいひととき</span></h2>
             <p><span class="menu-intro-phrase">定番の一杯から、</span><wbr /><span class="menu-intro-phrase">ゆっくり楽しめるボトルまで。</span></p>
           </div>
 
@@ -310,6 +310,8 @@
               <span data-song-heading="mata-aeru" hidden>スナック嵐 <span class="song-title-nowrap">～また逢える場所～</span></span>
               <span data-song-heading="hajimemashite" hidden>スナック嵐 <span class="song-title-nowrap song-title-long">～はじめましての夜～</span></span>
               <span data-song-heading="ogaki" hidden>スナック嵐 <span class="song-title-nowrap song-title-long">～おおがきの夜に～</span></span>
+              <span data-song-heading="kanpai-female" hidden>せーの！嵐で乾杯</span>
+              <span data-song-heading="kanpai-male" hidden>せーの！嵐で乾杯</span>
             </h2>
           </div>
           <button class="lyrics-close-button" type="button" data-close-lyrics aria-label="歌詞を閉じる">
@@ -317,7 +319,7 @@
           </button>
         </header>
 
-        <div class="lyrics-song-switcher" aria-label="曲を選ぶ">
+        <div class="lyrics-song-switcher" role="group" aria-label="曲を選ぶ">
           <button type="button" data-select-song="original" data-song-src="assets/snack-arashi-image-song.mp3" aria-controls="lyrics-song-original" aria-pressed="true">
             <small>1曲目</small><strong>今夜もスナック嵐で</strong>
           </button>
@@ -330,6 +332,12 @@
           <button type="button" data-select-song="ogaki" data-song-src="assets/snack-arashi-ogaki-no-yoru-ni.mp3" aria-controls="lyrics-song-ogaki" aria-pressed="false">
             <small>4曲目</small><strong>おおがきの夜に</strong>
           </button>
+          <button type="button" data-select-song="kanpai-female" data-song-src="assets/snack-arashi-se-no-arashi-de-kanpai-female.mp3" aria-controls="lyrics-song-kanpai-female" aria-pressed="false" aria-label="5曲目 女性ボーカル版 せーの！嵐で乾杯">
+            <small>5曲目・女性</small><strong>せーの！嵐で乾杯</strong>
+          </button>
+          <button type="button" data-select-song="kanpai-male" data-song-panel="kanpai-female" data-song-src="assets/snack-arashi-se-no-arashi-de-kanpai-male.mp3" aria-controls="lyrics-song-kanpai-female" aria-pressed="false" aria-label="6曲目 男性ボーカル版 せーの！嵐で乾杯">
+            <small>6曲目・男性</small><strong>せーの！嵐で乾杯</strong>
+          </button>
         </div>
 
         <div class="lyrics-player">
@@ -338,9 +346,9 @@
               <span class="lyrics-play-icon" aria-hidden="true">▶</span>
               <span data-lyrics-play-label>この曲を再生</span>
             </button>
-            <button class="lyrics-playlist-button" type="button" data-playlist-play aria-pressed="false" aria-label="1曲目から4曲目まで連続リピート再生">
+            <button class="lyrics-playlist-button" type="button" data-playlist-play aria-pressed="false" aria-label="1曲目から6曲目まで連続リピート再生">
               <span class="lyrics-playlist-icon" aria-hidden="true">↻</span>
-              <span data-playlist-play-label>4曲リピート</span>
+              <span data-playlist-play-label>6曲リピート</span>
             </button>
           </div>
           <span class="lyrics-play-progress" data-lyrics-progress aria-hidden="true"></span>
@@ -769,6 +777,133 @@
               </p>
             </section>
           </div>
+
+          <div id="lyrics-song-kanpai-female" data-lyrics-song="kanpai-female" hidden>
+            <section class="lyrics-block">
+              <h3>イントロ</h3>
+              <p>
+                今夜も灯りがついたなら<br />
+                笑顔がひとつ　またひとつ<br />
+                ここは大垣　夜の街<br />
+                スナック嵐へ　ようこそ！
+              </p>
+              <p>
+                「みんな、グラス持った？」<br />
+                「それじゃあ、いくよー！」<br />
+                「せーの！」
+              </p>
+            </section>
+
+            <section class="lyrics-block lyrics-chorus">
+              <h3>サビ</h3>
+              <p>
+                嵐で乾杯！　笑顔に乾杯！<br />
+                今日も一日　おつかれさま！<br />
+                うれしい夜も　ちょっと疲れた夜も<br />
+                ここに来たなら　みんな仲間さ
+              </p>
+              <p>
+                嵐で乾杯！　出会いに乾杯！<br />
+                グラスを上げて　声合わせ<br />
+                今夜は楽しく　笑っていこう<br />
+                せーの！　かんぱーい！
+              </p>
+            </section>
+
+            <section class="lyrics-block">
+              <h3>Aメロ</h3>
+              <p>
+                仕事帰りに　ふらっと一杯<br />
+                久しぶりだねと　いつもの笑顔<br />
+                初めましても　遠慮はいらない<br />
+                同じカウンターに座れば仲間
+              </p>
+              <p>
+                歌いたい人　歌いましょう<br />
+                話したい人　話しましょう<br />
+                静かに飲むのも　それもいい<br />
+                それぞれ楽しむ　嵐の夜
+              </p>
+            </section>
+
+            <section class="lyrics-block">
+              <h3>Bメロ</h3>
+              <p>
+                ママミヤコの「おかえり！」に<br />
+                なんだか心が　ほっとする<br />
+                今日の出来事　話しながら<br />
+                嫌なことなら　置いていこう
+              </p>
+              <p>さあ、もう一度！</p>
+            </section>
+
+            <section class="lyrics-block lyrics-chorus">
+              <h3>サビ</h3>
+              <p>
+                嵐で乾杯！　笑顔に乾杯！<br />
+                今日も一日　おつかれさま！<br />
+                うれしい夜も　ちょっと疲れた夜も<br />
+                ここに来たなら　みんな仲間さ
+              </p>
+              <p>
+                嵐で乾杯！　出会いに乾杯！<br />
+                グラスを上げて　声合わせ<br />
+                今夜は楽しく　笑っていこう<br />
+                せーの！　かんぱーい！
+              </p>
+            </section>
+
+            <section class="lyrics-block lyrics-instrumental">
+              <h3>間奏・掛け声</h3>
+              <p>
+                「まだまだいける？」<br />
+                「いけるー！」
+              </p>
+              <p>
+                「笑ってる？」<br />
+                「笑ってるー！」
+              </p>
+              <p>
+                「明日も元気に？」<br />
+                「がんばろう！」
+              </p>
+              <p>
+                「それじゃあ最後に！」<br />
+                「かんぱーい！」
+              </p>
+            </section>
+
+            <section class="lyrics-block lyrics-chorus">
+              <h3>ラスサビ</h3>
+              <p>
+                嵐で乾杯！　みんなに乾杯！<br />
+                出会えたことが　宝物<br />
+                笑って歌って　夜は更けて<br />
+                今夜の思い出　持って帰ろう
+              </p>
+              <p>
+                嵐で乾杯！　明日に乾杯！<br />
+                また会える日を　楽しみに<br />
+                ママミヤコと　みんなの笑顔<br />
+                これからもずっと　続きますように
+              </p>
+              <p>
+                グラスを上げて　声合わせ<br />
+                せーの！　せーの！
+              </p>
+              <p>「かんぱーい！」</p>
+            </section>
+
+            <section class="lyrics-block">
+              <h3>アウトロ</h3>
+              <p>
+                今日もありがとう<br />
+                スナック嵐<br />
+                また一緒に――<br />
+                乾杯！
+              </p>
+            </section>
+          </div>
         </div>
 
         <footer class="lyrics-dialog-footer">
@@ -777,6 +912,6 @@
       </div>
     </dialog>
 
-    <script src="script.js?v=20260918-playlist-loop"></script>
+    <script src="script.js?v=20260920-sixth-song"></script>
   </body>
 </html>

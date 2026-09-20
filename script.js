@@ -63,6 +63,7 @@ if (audio && lyricsPlayButton) {
   const songHeadings = document.querySelectorAll('[data-song-heading]');
   const audioSource = audio.querySelector('source');
   const lyricsBody = document.querySelector('.lyrics-dialog-body');
+  const playlistSongCount = songChoices.length;
   let playlistActive = false;
 
   const setPlayerState = (isPlaying) => {
@@ -81,9 +82,9 @@ if (audio && lyricsPlayButton) {
     playlistPlayButton.setAttribute('aria-pressed', String(isActive));
     playlistPlayButton.setAttribute(
       'aria-label',
-      isActive ? '4曲の連続リピート再生を停止' : '1曲目から4曲目まで連続リピート再生',
+      isActive ? `${playlistSongCount}曲の連続リピート再生を停止` : `1曲目から${playlistSongCount}曲目まで連続リピート再生`,
     );
-    if (playlistPlayLabel) playlistPlayLabel.textContent = isActive ? 'リピート停止' : '4曲リピート';
+    if (playlistPlayLabel) playlistPlayLabel.textContent = isActive ? 'リピート停止' : `${playlistSongCount}曲リピート`;
   };
 
   stopPlaylistMode = () => setPlaylistState(false);
@@ -98,7 +99,8 @@ if (audio && lyricsPlayButton) {
     audio.load();
     songHeadings.forEach((heading) => { heading.hidden = heading.dataset.songHeading !== choice.dataset.selectSong; });
     songChoices.forEach((button) => button.setAttribute('aria-pressed', String(button === choice)));
-    songPanels.forEach((panel) => { panel.hidden = panel.dataset.lyricsSong !== choice.dataset.selectSong; });
+    const songPanelKey = choice.dataset.songPanel || choice.dataset.selectSong;
+    songPanels.forEach((panel) => { panel.hidden = panel.dataset.lyricsSong !== songPanelKey; });
     if (lyricsBody) lyricsBody.scrollTop = 0;
     if (lyricsProgress) lyricsProgress.style.width = '0%';
     setPlayerState(false);
@@ -138,7 +140,7 @@ if (audio && lyricsPlayButton) {
     if (playlistActive) {
       setPlaylistState(false);
       audio.pause();
-      if (lyricsStatus) lyricsStatus.textContent = '4曲の連続リピート再生を停止しました';
+      if (lyricsStatus) lyricsStatus.textContent = `${playlistSongCount}曲の連続リピート再生を停止しました`;
       return;
     }
 
@@ -149,7 +151,7 @@ if (audio && lyricsPlayButton) {
     try {
       await audio.play();
       setPlaylistState(true);
-      if (lyricsStatus) lyricsStatus.textContent = '1曲目から4曲目まで連続リピート再生しています';
+      if (lyricsStatus) lyricsStatus.textContent = `1曲目から${playlistSongCount}曲目まで連続リピート再生しています`;
     } catch (error) {
       setPlaylistState(false);
       if (playlistPlayLabel) playlistPlayLabel.textContent = '再生できません';
