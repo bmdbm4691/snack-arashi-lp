@@ -10,7 +10,7 @@
     <meta name="theme-color" content="#170a24" />
     <title>スナック嵐｜大垣・郭町</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23d9b560'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-size='36' fill='%23100619'%3E%E5%B5%90%3C/text%3E%3C/svg%3E" />
-    <link rel="stylesheet" href="styles.css?v=20260920-sixth-song" />
+    <link rel="stylesheet" href="styles.css?v=20260922-album-collapse-v2" />
   </head>
   <body>
     <a class="skip-link" href="#main">本文へ移動</a>
@@ -65,7 +65,7 @@
             </div>
             <button class="lyrics-open-button" type="button" data-open-lyrics aria-haspopup="dialog">
               <span aria-hidden="true">♬</span>
-              曲・歌詞を見る
+              オリジナルアルバム曲を聴く
             </button>
             <dl class="hero-facts" aria-label="店舗概要">
               <div>
@@ -123,6 +123,66 @@
               <h3>癒しと安らぎの空間</h3>
               <p>一日の終わりに、心がほっとする大人の隠れ家を目指しています。</p>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="interior" class="section interior-section" aria-labelledby="interior-title">
+        <div class="section-inner">
+          <div class="section-heading centered reveal">
+            <p class="eyebrow">INSIDE SNACK ARASHI</p>
+            <h2 id="interior-title">店内のご案内</h2>
+            <p>
+              落ち着いたボックス席と、会話が弾むカウンター。<br />
+              店内の雰囲気をご覧ください。
+            </p>
+          </div>
+
+          <div class="interior-gallery">
+            <figure class="interior-card reveal">
+              <img
+                src="assets/interior-booth.jpg"
+                alt="丸いテーブルを囲むスナック嵐のボックス席"
+                width="994"
+                height="1326"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>ゆったりボックス席</figcaption>
+            </figure>
+            <figure class="interior-card reveal reveal-delay-short">
+              <img
+                src="assets/interior-entrance.png"
+                alt="店内奥へ続くスナック嵐の入口"
+                width="1086"
+                height="1448"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>温かな店内入口</figcaption>
+            </figure>
+            <figure class="interior-card reveal reveal-delay">
+              <img
+                src="assets/interior-counter.jpg"
+                alt="ボトルが並ぶスナック嵐のカウンター"
+                width="994"
+                height="1326"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>こだわりのお酒</figcaption>
+            </figure>
+            <figure class="interior-card reveal reveal-delay">
+              <img
+                src="assets/interior-bottle-shelf.png"
+                alt="壁一面にボトルが並ぶ店内の棚"
+                width="1086"
+                height="1448"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>こだわりのお酒</figcaption>
+            </figure>
           </div>
         </div>
       </section>
@@ -302,7 +362,7 @@
     <dialog id="lyrics-dialog" class="lyrics-dialog" aria-labelledby="lyrics-title">
       <div class="lyrics-dialog-panel">
         <header class="lyrics-dialog-header">
-          <div>
+          <div id="lyrics-dialog-heading" class="lyrics-dialog-heading">
             <p>IMAGE SONG LYRICS</p>
             <span class="lyrics-title-label">タイトル</span>
             <h2 id="lyrics-title">
@@ -312,8 +372,21 @@
               <span data-song-heading="ogaki" hidden>スナック嵐 <span class="song-title-nowrap song-title-long">～おおがきの夜に～</span></span>
               <span data-song-heading="kanpai-female" hidden>せーの！嵐で乾杯</span>
               <span data-song-heading="kanpai-male" hidden>せーの！嵐で乾杯</span>
+              <span class="song-title-fukurou" data-song-heading="fukurou" hidden>ふくろうだけが知っている</span>
+              <span class="song-title-anniversary" data-song-heading="anniversary" hidden>この灯りを、これからも</span>
             </h2>
           </div>
+          <button
+            class="lyrics-header-toggle"
+            type="button"
+            data-toggle-lyrics-header
+            aria-expanded="true"
+            aria-controls="lyrics-dialog-heading"
+            aria-label="タイトル部分を上にたたむ"
+          >
+            <span class="lyrics-header-toggle-icon" data-lyrics-header-toggle-icon aria-hidden="true">▲</span>
+            <span data-lyrics-header-toggle-label>たたむ</span>
+          </button>
           <button class="lyrics-close-button" type="button" data-close-lyrics aria-label="歌詞を閉じる">
             <span aria-hidden="true">×</span>
           </button>
@@ -338,6 +411,12 @@
           <button type="button" data-select-song="kanpai-male" data-song-panel="kanpai-female" data-song-src="assets/snack-arashi-se-no-arashi-de-kanpai-male.mp3" aria-controls="lyrics-song-kanpai-female" aria-pressed="false" aria-label="6曲目 男性ボーカル版 せーの！嵐で乾杯">
             <small>6曲目・男性</small><strong>せーの！嵐で乾杯</strong>
           </button>
+          <button type="button" data-select-song="fukurou" data-song-src="assets/snack-arashi-fukurou-dake-ga-shitteiru.mp3" aria-controls="lyrics-song-fukurou" aria-pressed="false">
+            <small>7曲目</small><strong>ふくろうだけが知っている</strong>
+          </button>
+          <button type="button" data-select-song="anniversary" data-song-src="assets/snack-arashi-kono-akari-o-korekaramo.mp3" aria-controls="lyrics-song-anniversary" aria-pressed="false">
+            <small>8曲目</small><strong>この灯りを、これからも</strong>
+          </button>
         </div>
 
         <div class="lyrics-player">
@@ -346,9 +425,9 @@
               <span class="lyrics-play-icon" aria-hidden="true">▶</span>
               <span data-lyrics-play-label>この曲を再生</span>
             </button>
-            <button class="lyrics-playlist-button" type="button" data-playlist-play aria-pressed="false" aria-label="1曲目から6曲目まで連続リピート再生">
+            <button class="lyrics-playlist-button" type="button" data-playlist-play aria-pressed="false" aria-label="1曲目から8曲目まで連続リピート再生">
               <span class="lyrics-playlist-icon" aria-hidden="true">↻</span>
-              <span data-playlist-play-label>6曲リピート</span>
+              <span data-playlist-play-label>8曲リピート</span>
             </button>
           </div>
           <span class="lyrics-play-progress" data-lyrics-progress aria-hidden="true"></span>
@@ -904,6 +983,315 @@
               </p>
             </section>
           </div>
+
+          <div id="lyrics-song-fukurou" data-lyrics-song="fukurou" hidden>
+            <section class="lyrics-block">
+              <h3>イントロ</h3>
+              <p>
+                街の灯りが　ともるころ<br />
+                今夜も扉が　開いてくる<br />
+                カウンターのすみっこで<br />
+                ぼくは静かに　見ているよ
+              </p>
+              <p>
+                ホー　ホー<br />
+                今夜はどんな夜になる？
+              </p>
+            </section>
+
+            <section class="lyrics-block">
+              <h3>Aメロ</h3>
+              <p>
+                「こんばんは」とやって来て<br />
+                いつもの席に　腰かける<br />
+                今日はちょっぴり　疲れ顔<br />
+                だけど一杯　飲んだなら
+              </p>
+              <p>
+                ママミヤコとの　おしゃべりに<br />
+                少しずつ笑顔が戻ってく<br />
+                さっきまでの　ため息は<br />
+                いつの間にやら　笑い声
+              </p>
+              <p>
+                ぼくは何にも　言わないけれど<br />
+                ちゃんと全部　見ているよ
+              </p>
+            </section>
+
+            <section class="lyrics-block lyrics-chorus">
+              <h3>サビ</h3>
+              <p>
+                ふくろうだけが　知っている<br />
+                嵐の夜の　物語<br />
+                笑った顔も　照れた顔も<br />
+                ここではみんな　いい顔になる
+              </p>
+              <p>
+                ふくろうだけが　知っている<br />
+                今夜も生まれる　小さな奇跡<br />
+                グラスを合わせて　「乾杯！」したら<br />
+                知らない同士も　仲間になる
+              </p>
+              <p>
+                ホー　ホー<br />
+                スナック嵐の夜は<br />
+                まだまだこれから
+              </p>
+            </section>
+
+            <section class="lyrics-block">
+              <h3>Aメロ2</h3>
+              <p>
+                カラオケ入れて　マイク持ち<br />
+                「今日は歌わない」って言ったのに<br />
+                気づけば誰より　楽しそう<br />
+                拍手に包まれ　もう一曲！
+              </p>
+              <p>
+                初めて来た人　常連さん<br />
+                遠くの街から　来た人も<br />
+                ここで出会った　その夜から<br />
+                ひとつ思い出　増えていく
+              </p>
+              <p>
+                ママミヤコは　笑いながら<br />
+                みんなのグラスを　見ているよ<br />
+                そんなママの　笑顔まで<br />
+                ぼくはこっそり　見ているよ
+              </p>
+            </section>
+
+            <section class="lyrics-block lyrics-chorus">
+              <h3>サビ</h3>
+              <p>
+                ふくろうだけが　知っている<br />
+                嵐の夜の　物語<br />
+                うれしい話も　悩みごとも<br />
+                ここではみんな　大切な時間
+              </p>
+              <p>
+                ふくろうだけが　知っている<br />
+                何度も交わした　「また来るね」<br />
+                扉を開けて　帰るころには<br />
+                来たときよりも　いい笑顔
+              </p>
+              <p>
+                ホー　ホー<br />
+                それがぼくには<br />
+                うれしいんだ
+              </p>
+            </section>
+
+            <section class="lyrics-block lyrics-instrumental">
+              <h3>間奏・語り</h3>
+              <p>
+                ぼくはずっと見てきたよ<br />
+                初めて来た夜も<br />
+                久しぶりに来た夜も
+              </p>
+              <p>
+                笑った夜も<br />
+                ちょっぴり泣いた夜も
+              </p>
+              <p>
+                ママミヤコは<br />
+                いつもここにいた
+              </p>
+              <p>
+                そして今夜も<br />
+                誰かの「ただいま」を<br />
+                待っている
+              </p>
+            </section>
+
+            <section class="lyrics-block lyrics-chorus">
+              <h3>ラスサビ</h3>
+              <p>
+                ふくろうだけが　知っている<br />
+                嵐で生まれた　物語<br />
+                数えきれない　出会いの数だけ<br />
+                大切な思い出　ここにある
+              </p>
+              <p>
+                ふくろうだけが　知っている<br />
+                ママミヤコの　優しい笑顔<br />
+                「また来るね」って　手を振るあなたを<br />
+                今日も笑顔で　見送っている
+              </p>
+              <p>
+                明日もきっと　この場所で<br />
+                新しい物語が　始まるよ<br />
+                スナック嵐の　灯りの下で<br />
+                また一緒に　笑おうね
+              </p>
+            </section>
+
+            <section class="lyrics-block">
+              <h3>アウトロ</h3>
+              <p>
+                最後のお客さんが　帰ったあと<br />
+                静かになった　カウンター<br />
+                ぼくは今日も　ひとりつぶやく<br />
+                「いい夜だったなぁ」
+              </p>
+              <p>
+                ホー　ホー……<br />
+                おやすみ<br />
+                また明日
+              </p>
+            </section>
+          </div>
+
+          <div id="lyrics-song-anniversary" data-lyrics-song="anniversary" hidden>
+            <section class="lyrics-block">
+              <h3>イントロ</h3>
+              <p>
+                あの日ともした　小さな灯り<br />
+                気づけば季節を　重ねてきたね<br />
+                笑った夜も　語った夜も<br />
+                すべてが嵐の　宝物
+              </p>
+            </section>
+
+            <section class="lyrics-block">
+              <h3>Aメロ</h3>
+              <p>
+                初めて扉を　開けた人<br />
+                いつもの席に　座る人<br />
+                「久しぶり」って　笑う声<br />
+                今夜もここに　響いてる
+              </p>
+              <p>
+                うれしいことが　あった夜<br />
+                少し疲れて　来た夜も<br />
+                グラスを片手に　語り合えば<br />
+                いつしか笑顔に　変わってた
+              </p>
+            </section>
+
+            <section class="lyrics-block">
+              <h3>Bメロ</h3>
+              <p>
+                ひとつひとつの　出会いから<br />
+                たくさんの物語が生まれた<br />
+                ママミヤコが守ってきた<br />
+                この場所で　また会えたね
+              </p>
+            </section>
+
+            <section class="lyrics-block lyrics-chorus">
+              <h3>サビ</h3>
+              <p>
+                ありがとう　ありがとう<br />
+                11年分の　ありがとう<br />
+                あなたの笑顔があったから<br />
+                今日まで歩いてこられたよ
+              </p>
+              <p>
+                ありがとう　ありがとう<br />
+                出会えたすべての人たちへ<br />
+                今夜はみんなで　グラスを上げて<br />
+                スナック嵐　11周年！<br />
+                「乾杯！」
+              </p>
+            </section>
+
+            <section class="lyrics-block">
+              <h3>Aメロ2</h3>
+              <p>
+                歌えばみんなで　盛り上がり<br />
+                話せば時間を　忘れてく<br />
+                名前も知らなかった二人が<br />
+                いつしか仲間に　なっていく
+              </p>
+              <p>
+                遠くから来てくれた人<br />
+                いつも通ってくれる人<br />
+                初めて来てくれたあなたにも<br />
+                この灯りは　開いてる
+              </p>
+            </section>
+
+            <section class="lyrics-block">
+              <h3>Bメロ2</h3>
+              <p>
+                11年という　時間の中<br />
+                変わったものも　あるけれど<br />
+                「また来るね」って　その言葉<br />
+                変わらずここで　待っている
+              </p>
+            </section>
+
+            <section class="lyrics-block lyrics-chorus">
+              <h3>サビ</h3>
+              <p>
+                ありがとう　ありがとう<br />
+                11年分の　ありがとう<br />
+                一緒に過ごした　この時間<br />
+                ひとつひとつが　宝物
+              </p>
+              <p>
+                ありがとう　ありがとう<br />
+                支えてくれた　みんなへ<br />
+                今夜は笑って　歌いながら<br />
+                スナック嵐　11周年！
+              </p>
+            </section>
+
+            <section class="lyrics-block lyrics-instrumental">
+              <h3>間奏・語り</h3>
+              <p>「11年間、本当にありがとう」</p>
+              <p>
+                「たくさんの出会いと<br />
+                たくさんの笑顔に支えられて<br />
+                今日を迎えることができました」
+              </p>
+              <p>
+                「これからもスナック嵐を<br />
+                よろしくお願いします」
+              </p>
+              <p>「それでは、みんなで――乾杯！」</p>
+            </section>
+
+            <section class="lyrics-block lyrics-chorus">
+              <h3>ラスサビ</h3>
+              <p>
+                ありがとう　ありがとう<br />
+                11年分じゃ　足りないくらい<br />
+                伝えたい想いが　ここにある<br />
+                出会ってくれて　ありがとう
+              </p>
+              <p>
+                これから先も　この場所で<br />
+                笑って歌って　語り合おう<br />
+                12年　13年　その先も<br />
+                一緒に思い出　増やしていこう
+              </p>
+              <p>
+                ママミヤコと　みんなの笑顔<br />
+                この灯りが　続くように<br />
+                今日まで本当に　ありがとう<br />
+                そして明日からも　よろしくね
+              </p>
+              <p>
+                スナック嵐<br />
+                11周年！<br />
+                みんな一緒に――<br />
+                「かんぱーい！」
+              </p>
+            </section>
+
+            <section class="lyrics-block">
+              <h3>アウトロ</h3>
+              <p>
+                11年分のありがとう<br />
+                そして<br />
+                これからの出会いに<br />
+                乾杯
+              </p>
+            </section>
+          </div>
         </div>
 
         <footer class="lyrics-dialog-footer">
@@ -912,6 +1300,6 @@
       </div>
     </dialog>
 
-    <script src="script.js?v=20260920-sixth-song"></script>
+    <script src="script.js?v=20260922-album-collapse-v2"></script>
   </body>
 </html>

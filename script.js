@@ -190,6 +190,26 @@ if (audio && lyricsPlayButton) {
 const lyricsDialog = document.getElementById('lyrics-dialog');
 const openLyricsButton = document.querySelector('[data-open-lyrics]');
 const closeLyricsButtons = document.querySelectorAll('[data-close-lyrics]');
+const lyricsDialogPanel = lyricsDialog?.querySelector('.lyrics-dialog-panel');
+const lyricsHeaderToggle = lyricsDialog?.querySelector('[data-toggle-lyrics-header]');
+const lyricsHeaderToggleLabel = lyricsHeaderToggle?.querySelector('[data-lyrics-header-toggle-label]');
+const lyricsHeaderToggleIcon = lyricsHeaderToggle?.querySelector('[data-lyrics-header-toggle-icon]');
+
+function setLyricsHeaderCollapsed(isCollapsed) {
+  lyricsDialogPanel?.classList.toggle('is-header-collapsed', isCollapsed);
+  lyricsHeaderToggle?.setAttribute('aria-expanded', String(!isCollapsed));
+  lyricsHeaderToggle?.setAttribute(
+    'aria-label',
+    isCollapsed ? 'タイトル部分を表示' : 'タイトル部分を上にたたむ',
+  );
+  if (lyricsHeaderToggleLabel) lyricsHeaderToggleLabel.textContent = isCollapsed ? '上部を表示' : 'たたむ';
+  if (lyricsHeaderToggleIcon) lyricsHeaderToggleIcon.textContent = isCollapsed ? '▼' : '▲';
+}
+
+lyricsHeaderToggle?.addEventListener('click', () => {
+  const isExpanded = lyricsHeaderToggle.getAttribute('aria-expanded') === 'true';
+  setLyricsHeaderCollapsed(isExpanded);
+});
 
 function closeLyrics() {
   if (!lyricsDialog) return;
@@ -208,6 +228,8 @@ function closeLyrics() {
 
 openLyricsButton?.addEventListener('click', () => {
   if (!lyricsDialog) return;
+
+  setLyricsHeaderCollapsed(false);
 
   if (typeof lyricsDialog.showModal === 'function') {
     lyricsDialog.showModal();
