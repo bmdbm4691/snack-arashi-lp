@@ -554,6 +554,11 @@ a {
   display: none;
 }
 
+.lyrics-dialog-panel.is-header-collapsed .lyrics-song-switcher,
+.lyrics-dialog-panel.is-header-collapsed .lyrics-player {
+  display: none;
+}
+
 .lyrics-dialog-panel.is-header-collapsed .lyrics-header-toggle {
   top: 50%;
   right: 84px;

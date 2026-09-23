@@ -200,7 +200,7 @@ function setLyricsHeaderCollapsed(isCollapsed) {
   lyricsHeaderToggle?.setAttribute('aria-expanded', String(!isCollapsed));
   lyricsHeaderToggle?.setAttribute(
     'aria-label',
-    isCollapsed ? 'タイトル部分を表示' : 'タイトル部分を上にたたむ',
+    isCollapsed ? '曲選択と再生部分を表示' : '曲選択と再生部分を上にたたむ',
   );
   if (lyricsHeaderToggleLabel) lyricsHeaderToggleLabel.textContent = isCollapsed ? '上部を表示' : 'たたむ';
   if (lyricsHeaderToggleIcon) lyricsHeaderToggleIcon.textContent = isCollapsed ? '▼' : '▲';

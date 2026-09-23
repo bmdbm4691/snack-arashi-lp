@@ -10,7 +10,7 @@
     <meta name="theme-color" content="#170a24" />
     <title>スナック嵐｜大垣・郭町</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23d9b560'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-size='36' fill='%23100619'%3E%E5%B5%90%3C/text%3E%3C/svg%3E" />
-    <link rel="stylesheet" href="styles.css?v=20260922-album-collapse-v2" />
+    <link rel="stylesheet" href="styles.css?v=20260923-album-collapse-v3" />
   </head>
   <body>
     <a class="skip-link" href="#main">本文へ移動</a>
@@ -381,8 +381,8 @@
             type="button"
             data-toggle-lyrics-header
             aria-expanded="true"
-            aria-controls="lyrics-dialog-heading"
-            aria-label="タイトル部分を上にたたむ"
+            aria-controls="lyrics-dialog-heading lyrics-song-switcher lyrics-player"
+            aria-label="曲選択と再生部分を上にたたむ"
           >
             <span class="lyrics-header-toggle-icon" data-lyrics-header-toggle-icon aria-hidden="true">▲</span>
             <span data-lyrics-header-toggle-label>たたむ</span>
@@ -392,7 +392,7 @@
           </button>
         </header>
 
-        <div class="lyrics-song-switcher" role="group" aria-label="曲を選ぶ">
+        <div id="lyrics-song-switcher" class="lyrics-song-switcher" role="group" aria-label="曲を選ぶ">
           <button type="button" data-select-song="original" data-song-src="assets/snack-arashi-image-song.mp3" aria-controls="lyrics-song-original" aria-pressed="true">
             <small>1曲目</small><strong>今夜もスナック嵐で</strong>
           </button>
@@ -419,7 +419,7 @@
           </button>
         </div>
 
-        <div class="lyrics-player">
+        <div id="lyrics-player" class="lyrics-player">
           <div class="lyrics-player-controls">
             <button class="lyrics-play-button" type="button" data-lyrics-play aria-pressed="false" aria-label="選択中の曲を再生">
               <span class="lyrics-play-icon" aria-hidden="true">▶</span>
@@ -1300,6 +1300,6 @@
       </div>
     </dialog>
 
-    <script src="script.js?v=20260922-album-collapse-v2"></script>
+    <script src="script.js?v=20260923-album-collapse-v3"></script>
   </body>
 </html>
