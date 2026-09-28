@@ -10,7 +10,7 @@
     <meta name="theme-color" content="#170a24" />
     <title>スナック嵐｜大垣・郭町</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23d9b560'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-size='36' fill='%23100619'%3E%E5%B5%90%3C/text%3E%3C/svg%3E" />
-    <link rel="stylesheet" href="styles.css?v=20260923-album-collapse-v3" />
+    <link rel="stylesheet" href="styles.css?v=20260928-seat-labels-v1" />
   </head>
   <body>
     <a class="skip-link" href="#main">本文へ移動</a>
@@ -133,56 +133,172 @@
             <p class="eyebrow">INSIDE SNACK ARASHI</p>
             <h2 id="interior-title">店内のご案内</h2>
             <p>
-              落ち着いたボックス席と、会話が弾むカウンター。<br />
-              店内の雰囲気をご覧ください。
+              入口からカウンター、奥のテーブル席まで。<br />
+              エリアごとに店内の雰囲気をご覧ください。
             </p>
           </div>
 
-          <div class="interior-gallery">
-            <figure class="interior-card reveal">
-              <img
-                src="assets/interior-booth.jpg"
-                alt="丸いテーブルを囲むスナック嵐のボックス席"
-                width="994"
-                height="1326"
-                loading="lazy"
-                decoding="async"
-              />
-              <figcaption>ゆったりボックス席</figcaption>
-            </figure>
-            <figure class="interior-card reveal reveal-delay-short">
-              <img
-                src="assets/interior-entrance.png"
-                alt="店内奥へ続くスナック嵐の入口"
-                width="1086"
-                height="1448"
-                loading="lazy"
-                decoding="async"
-              />
-              <figcaption>温かな店内入口</figcaption>
-            </figure>
-            <figure class="interior-card reveal reveal-delay">
-              <img
-                src="assets/interior-counter.jpg"
-                alt="ボトルが並ぶスナック嵐のカウンター"
-                width="994"
-                height="1326"
-                loading="lazy"
-                decoding="async"
-              />
-              <figcaption>こだわりのお酒</figcaption>
-            </figure>
-            <figure class="interior-card reveal reveal-delay">
-              <img
-                src="assets/interior-bottle-shelf.png"
-                alt="壁一面にボトルが並ぶ店内の棚"
-                width="1086"
-                height="1448"
-                loading="lazy"
-                decoding="async"
-              />
-              <figcaption>こだわりのお酒</figcaption>
-            </figure>
+          <section class="interior-capacity reveal" aria-labelledby="interior-capacity-title">
+            <div class="interior-capacity-heading">
+              <p>SEATING CAPACITY</p>
+              <h3 id="interior-capacity-title">お席のご案内</h3>
+            </div>
+            <div class="interior-capacity-content">
+              <dl class="interior-capacity-list">
+                <div>
+                  <dt>カウンター</dt>
+                  <dd><strong>9</strong><span>名</span></dd>
+                </div>
+                <div>
+                  <dt>入口側テーブル席</dt>
+                  <dd><strong>6</strong><span>名</span></dd>
+                </div>
+                <div>
+                  <dt>奥のテーブル席</dt>
+                  <dd><strong>25</strong><span>名</span></dd>
+                </div>
+              </dl>
+              <p class="interior-capacity-total">
+                <span>最大</span><strong>40</strong><span>名</span>
+              </p>
+            </div>
+          </section>
+
+          <div class="interior-area-groups" aria-label="エリア別の店内写真">
+            <section class="interior-area" aria-labelledby="interior-area-entrance-title">
+              <div class="interior-area-heading reveal">
+                <span class="interior-area-number" aria-hidden="true">01</span>
+                <div>
+                  <p>ENTRANCE</p>
+                  <h3 id="interior-area-entrance-title">入口</h3>
+                </div>
+              </div>
+              <div class="interior-gallery interior-gallery--entrance">
+                <figure class="interior-card interior-card--entrance-door reveal">
+                  <img
+                    src="assets/interior-area-entrance.jpg"
+                    alt="スナック嵐の店名プレートが付いた店舗入口"
+                    width="960"
+                    height="1280"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <figcaption>店舗入口</figcaption>
+                </figure>
+                <figure class="interior-card reveal reveal-delay-short">
+                  <img
+                    src="assets/interior-entrance.png"
+                    alt="店内奥へ続くスナック嵐の入口"
+                    width="1086"
+                    height="1448"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <figcaption>店内へ続く入口</figcaption>
+                </figure>
+              </div>
+            </section>
+
+            <section class="interior-area" aria-labelledby="interior-area-counter-title">
+              <div class="interior-area-heading reveal">
+                <span class="interior-area-number" aria-hidden="true">02</span>
+                <div>
+                  <p>COUNTER</p>
+                  <h3 id="interior-area-counter-title">カウンター</h3>
+                </div>
+              </div>
+              <div class="interior-gallery interior-gallery--counter">
+                <figure class="interior-card reveal">
+                  <img
+                    src="assets/interior-area-counter-angle.jpg"
+                    alt="椅子が並ぶスナック嵐のカウンターを斜めから見た店内"
+                    width="960"
+                    height="1280"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <figcaption>カウンター席 全景</figcaption>
+                </figure>
+                <figure class="interior-card interior-card--counter-front reveal reveal-delay-short">
+                  <img
+                    src="assets/interior-area-counter-front.jpg"
+                    alt="ボトル棚と椅子が並ぶスナック嵐のカウンター正面"
+                    width="960"
+                    height="1280"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <figcaption>カウンター席 正面</figcaption>
+                </figure>
+                <figure class="interior-card reveal reveal-delay">
+                  <img
+                    src="assets/interior-counter-clean-v2.jpg"
+                    alt="ボトルが並ぶスナック嵐のカウンター"
+                    width="1086"
+                    height="1448"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <figcaption>こだわりのお酒</figcaption>
+                </figure>
+                <figure class="interior-card reveal reveal-delay">
+                  <img
+                    src="assets/interior-bottle-shelf.png"
+                    alt="壁一面にボトルが並ぶ店内の棚"
+                    width="1086"
+                    height="1448"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <figcaption>ボトル棚</figcaption>
+                </figure>
+              </div>
+            </section>
+
+            <section class="interior-area" aria-labelledby="interior-area-tables-title">
+              <div class="interior-area-heading reveal">
+                <span class="interior-area-number" aria-hidden="true">03</span>
+                <div>
+                  <p>TABLE SEATING</p>
+                  <h3 id="interior-area-tables-title">テーブル席</h3>
+                </div>
+              </div>
+              <div class="interior-gallery interior-gallery--tables">
+                <figure class="interior-card reveal">
+                  <img
+                    src="assets/interior-booth-restored.jpg"
+                    alt="スナック嵐の入口側にある6人掛けテーブル席"
+                    width="1087"
+                    height="1447"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <figcaption>入口側6人掛けテーブル席</figcaption>
+                </figure>
+                <figure class="interior-card interior-card--back-tables reveal reveal-delay-short">
+                  <img
+                    src="assets/interior-area-back-tables.jpg?v=20260928-split"
+                    alt="ソファと丸いテーブルが並ぶスナック嵐の奥のテーブル席"
+                    width="639"
+                    height="853"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <figcaption>奥のテーブル席 全景</figcaption>
+                </figure>
+                <figure class="interior-card interior-card--back-corner reveal reveal-delay">
+                  <img
+                    src="assets/interior-area-back-corner.jpg?v=20260928-split"
+                    alt="大きな丸いテーブルを囲むスナック嵐の奥の角席"
+                    width="639"
+                    height="853"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <figcaption>奥のテーブル席 角側</figcaption>
+                </figure>
+              </div>
+            </section>
           </div>
         </div>
       </section>
