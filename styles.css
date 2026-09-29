@@ -1524,7 +1524,7 @@ a {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   filter: saturate(0.88) brightness(0.72);
 }
@@ -2246,10 +2246,6 @@ a {
 
   .mood-section {
     min-height: 580px;
-  }
-
-  .mood-art img {
-    object-position: 63% center;
   }
 
   .mood-overlay {
